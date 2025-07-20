@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function App() {
   const [rollNo, setRollNo] = useState("");
@@ -13,7 +14,7 @@ function App() {
 
     try {
       // same as before but update request body key names
-      const res = await fetch("http://localhost:5000/api/library", {
+      const res = await fetch(`${apiUrl}/api/library`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
